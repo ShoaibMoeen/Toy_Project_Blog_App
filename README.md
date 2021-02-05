@@ -1,6 +1,7 @@
 # Toy Project Blog App for Link Graph
 
 The blog app is developed using django and deployed to the following heroku link using docker:
+
 https://toyproject-linkgraph.herokuapp.com/
 
 Requirement needed to run the project:
