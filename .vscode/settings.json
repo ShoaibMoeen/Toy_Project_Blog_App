@@ -1,0 +1,8 @@
+{
+    "python.formatting.provider": "black",
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Path": "flake8", 
+    "cornflakes.linter.run": "onType",
+    "python.linting.pylintEnabled": false,
+    "python.linting.enabled": true,
+}

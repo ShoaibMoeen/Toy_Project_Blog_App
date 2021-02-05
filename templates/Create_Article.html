@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div style="margin-top:30px; display: flex; flex-direction:row; justify-content:center">
+  <div class="col-lg-9">
+    <h1 style="text-align: center;">Create Blog Post</h1>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{form.as_p}}
+      <input class="btn btn-primary" style="float: right;margin-top:40px" type="submit" name="post" value="POST" />
+    </form>
+  </div>
+</div>
+
+{% endblock %}

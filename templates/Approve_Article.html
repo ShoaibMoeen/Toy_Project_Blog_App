@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style="margin-top:30px; display: flex; flex-direction:row; justify-content:center">
+    <div class="col-lg-9">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Article ID</th>
+                <th scope="col">Article Title</th>
+                <th scope="col">Writer</th>
+                <th scope="col">Creation Date</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for article in articles %}
+                <tr id=article{{article.id}}>
+                    <td>{{article.id}}</td>
+                    <td><a href="/article/{{article.id}}">{{article.title}}</a></td>
+                    <td>{{article.written_by.name}}</td>
+                    <td>{{article.created_at}}</td>
+                    <td><button id=approve{{article.id}} onclick="approveArticle('{{article.id}}')" class="btn btn-success" name={{article.id}}>Approve</button>
+                        <button id=reject{{article.id}} onclick="rejectArticle('{{article.id}}')" class="btn btn-danger">Reject</button></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<script>
+    function approveArticle(article_id){
+        var csrf_token = $('[name="csrfmiddlewaretoken"]').val();
+        $.ajax({
+            url: "/article-approval",
+            type: "POST",
+            data: {
+                'csrfmiddlewaretoken': csrf_token,
+                'is_approved': JSON.stringify('yes'),
+                'article_id':  JSON.stringify(article_id)
+    
+            },
+            success: function(data) {
+                if (data["approved"]) {
+                    $('#article'+article_id).remove();
+                } else {
+                    "OOPS! SOMETHING WENT WRONG"
+                }
+            }
+        });
+    }
+    function rejectArticle(article_id){
+        var csrf_token = $('[name="csrfmiddlewaretoken"]').val();
+        $.ajax({
+            url: "/article-approval",
+            type: "POST",
+            data: {
+                'csrfmiddlewaretoken': csrf_token,
+                'is_approved': JSON.stringify('no'),
+                'article_id':  JSON.stringify(article_id)
+            },
+            success: function(data) {
+                if (data["approved"]) {
+                    $('#article'+article_id).remove();
+                } else {
+                    "OOPS! SOMETHING WENT WRONG"
+                }
+            }
+        });      
+    }
+
+</script>
+{% endblock %}
