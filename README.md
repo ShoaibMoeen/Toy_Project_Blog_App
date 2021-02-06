@@ -21,3 +21,8 @@ Code can be exectued using following steps:
 5. Execute 'docker-compose build' command on the terminal
 6. Execute 'docker-compose up' command on the terminal
 7. The server should start and you can reach it via localhost:8000
+
+
+Screenshots:
+
+![Alt text](https://github.com/ShoaibMoeen/Toy_Project_Blog_App/blob/main/Screenshots/Login_screen.JPG "Login")
