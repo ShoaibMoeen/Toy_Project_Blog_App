@@ -25,4 +25,18 @@ Code can be exectued using following steps:
 
 Screenshots:
 
+Login Screen
 ![Alt text](https://github.com/ShoaibMoeen/Toy_Project_Blog_App/blob/main/Screenshots/Login_screen.JPG "Login")
+
+Home Screen
+![Alt text](https://github.com/ShoaibMoeen/Toy_Project_Blog_App/blob/main/Screenshots/home_screen.JPG "Home")
+
+Edited Screen
+![Alt text](https://github.com/ShoaibMoeen/Toy_Project_Blog_App/blob/main/Screenshots/edited_articles.JPG "edited")
+
+Create Article Screen
+![Alt text](https://github.com/ShoaibMoeen/Toy_Project_Blog_App/blob/main/Screenshots/create_article.JPG "Create")
+
+Article Approval Screen
+![Alt text](https://github.com/ShoaibMoeen/Toy_Project_Blog_App/blob/main/Screenshots/article_approval.JPG "Approve")
+
